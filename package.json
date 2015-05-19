@@ -1,0 +1,20 @@
+{
+  "name": "aem-selenium",
+  "version": "0.0.0",
+  "description": "functional end-to-end tests for AEM",
+  "dependencies": {
+    "chai": "^1.9.1",
+    "chai-as-promised": "^4.1.1",
+    "colors": "^0.6.2",
+    "mocha": "^1.21.4",
+    "selenium-standalone": "^2.42.0-2.9.0-1",
+    "selenium-webdriver": "^2.42.1",
+    "wd": "^0.3.4"
+  },
+  "scripts": {
+    "start": "node_modules/.bin/start-selenium",
+    "test": "mocha all-tests.js"
+  },
+  "author": "Asa Baylus <asa@baylus.com>",
+  "license": "Private"
+}
