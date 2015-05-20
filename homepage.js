@@ -20,7 +20,7 @@ module.exports.suite = function(config, browser) {
           });
       });
 
-      it("should have an appropriate title tag and URL", function (done) {
+      it("should have an appropriate title", function (done) {
         browser
           .title()
           .should.eventually.equal('Baylus.com')
@@ -29,10 +29,10 @@ module.exports.suite = function(config, browser) {
 
       describe('header', function(){
 
-        it("should display the Nat Geo logo", function (done) {
+        it("should display the website's logo", function (done) {
           // the logo should appear on the page
           browser
-            .elementByCss('#h1.logo').displayed()
+            .elementByCss('h1.logo').displayed()
             .should.eventually.equal(true)
             .notify(done);
         });

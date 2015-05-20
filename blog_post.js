@@ -1,7 +1,7 @@
 /* jshint evil: true */
 module.exports.suite = function(config, browser) {
 
-  describe('Homepage', function(){
+  describe('Blog Post', function(){
 
       before( function (done) {
         browser
@@ -20,21 +20,22 @@ module.exports.suite = function(config, browser) {
           });
       });
 
-      it("should have an appropriate title tag and URL", function (done) {
+      it("should have an appropriate title", function (done) {
         browser
           .title()
           .should.eventually.equal('Baylus.com')
-          .notify(done);
+          .and.notify(done);
       });
 
-      describe('post title', function(){
+      describe('post body', function(){
 
-        it("should display the A visual log for Git command line", function (done) {
+
+        it("should have at least 1 body tag with some text", function (done) {
           // the logo should appear on the page
           browser
-            .elementByCss('header > #h1').text()
-            .should.eventually.equal('A visual log for Git command line')
-            .notify(done);
+            .elementByCss(".post > p").text()
+            .should.eventually.have.length.above(0)
+            .and.notify(done);
         });
 
       });
